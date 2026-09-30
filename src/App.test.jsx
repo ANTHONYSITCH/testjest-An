@@ -7,6 +7,11 @@ function addTask(title) {
   fireEvent.click(screen.getByRole('button', { name: 'Ajouter' }));
 }
 
+test('affiche le texte Ajouter sur le bouton', () => {
+  render(<App />);
+  expect(screen.getByRole('button', { name: 'Ajouter' })).toHaveTextContent(/^Ajouter$/);
+});
+
 test('affiche une liste vide et refuse les tâches vides', () => {
   render(<App />);
   addTask('   ');
