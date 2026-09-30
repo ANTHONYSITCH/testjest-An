@@ -10,7 +10,7 @@ function addTask(title) {
 test('affiche une liste vide et refuse les tâches vides', () => {
   render(<App />);
   addTask('   ');
-  expect(screen.getByText('Aucune tâche pour le moment.')).toBeInTheDocument();
+  expect(screen.getByText('aucune tâche pour le moment.')).toBeInTheDocument();
   expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
 });
 
